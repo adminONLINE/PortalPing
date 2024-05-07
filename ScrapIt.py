@@ -1,24 +1,34 @@
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 import time
-from webdriver_manager.chrome import ChromeDriverManager
 import pandas as pd
 from ping3 import ping, verbose_ping
 import streamlit as st
+from selenium import webdriver
+from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.chrome.service import Service
+from webdriver_manager.chrome import ChromeDriverManager
+from webdriver_manager.core.os_manager import ChromeType
+  # Initialize the WebDriver
+@st.cache_resource
+def get_driver():
+    return webdriver.Chrome(
+        service=Service(
+            ChromeDriverManager(chrome_type=ChromeType.CHROMIUM).install()
+        ),
+        options=options,
+    )
 
+options = Options()
+options.add_argument("--disable-gpu")
+options.add_argument("--headless")
 
 
 
 
 def login(name,passw):
 
-       # Initialize the WebDriver
-
-       options = webdriver.ChromeOptions()
-       options.add_argument("headless")
-       driver = webdriver.Chrome(ChromeDriverManager().install(), options=options)
-
-
+     
        # Open the website
        driver.get('https://lukoilmutabakat.com:14401/Account')
        st.write("Lukoil Portalına bağlanıldı.")
