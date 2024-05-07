@@ -1,6 +1,7 @@
-selenium
+selenium~=3.141.0
 time
 webdriver_manager.chrome
-pandas
-ping3
-streamlit
+pandas~=2.0.3
+ping3~=4.0.4
+streamlit~=1.32.1
+pyinstaller~=5.13.2
