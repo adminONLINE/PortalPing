@@ -1,5 +1,4 @@
 selenium~=3.141.0
-time
 webdriver_manager.chrome
 pandas~=2.0.3
 ping3~=4.0.4
