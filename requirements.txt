@@ -1,0 +1,6 @@
+selenium
+time
+webdriver_manager.chrome
+pandas
+ping3
+streamlit
